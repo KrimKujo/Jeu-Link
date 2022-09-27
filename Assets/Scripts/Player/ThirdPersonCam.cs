@@ -21,7 +21,7 @@ public class ThirdPersonCam : MonoBehaviour
     }
 
     private void Update() {
-        Vector3 viewDir = player.position - new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        Vector3 viewDir = player.position - new Vector3(transform.position.x, player.position.y, transform.position.z);
         orientation.forward = viewDir.normalized;
         float horizontalInput =  playerInput.actions.FindActionMap("Foot")["Movement"].ReadValue<Vector2>().x;
         float verticalInput =  playerInput.actions.FindActionMap("Foot")["Movement"].ReadValue<Vector2>().y;
